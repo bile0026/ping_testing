@@ -1,0 +1,12 @@
+---
+- name: Check Host Connectivity
+  hosts: all
+  gather_facts: false
+  connection: local
+  vars:
+    deprecation_warnings: false
+
+  tasks:
+    - name: Import ping_testing role
+      import_role:
+        name: ping_testing

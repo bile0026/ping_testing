@@ -1,2 +1,7 @@
 ---
 # defaults file for ping_testing
+
+hosts_to_ping:
+  - 192.168.0.1
+  - 192.168.1.1
+  - 192.168.2.1

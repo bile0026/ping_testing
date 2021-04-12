@@ -1,2 +1,9 @@
 ---
 # tasks file for ping_testing
+
+- name: Ping for reachability
+  command: ping -c2 {{ item }}
+  register: ping_result
+  ignore_errors: true
+  with_items:
+    - "{{ hosts_to_ping }}"
