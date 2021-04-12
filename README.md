@@ -1,2 +1,3 @@
-# Ansible_Role_Default
-default structure for ansible
+# ping_testing
+
+Test connectivity from devices to a list of IP's/hostnames.
