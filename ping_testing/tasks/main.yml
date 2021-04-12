@@ -5,5 +5,40 @@
   command: ping -c2 {{ item }}
   register: ping_result
   ignore_errors: true
+  changed_when: false
+  no_log: true
   with_items:
     - "{{ hosts_to_ping }}"
+
+- name: Traceroute for reachability
+  command: tracepath -n {{ item }}
+  register: traceroute_result
+  ignore_errors: true
+  changed_when: false
+  no_log: true
+  with_items:
+    - "{{ hosts_to_ping }}"
+
+- name: Ping Success Report
+  debug:
+    msg: "PING SUCCESS"
+  when: item.rc == 0
+  loop: "{{ ping_result.results }}"
+  loop_control:
+    label: "Pingando {{ item.item }}"
+
+- name: Ping Failure Report
+  debug:
+    msg: "PING FAILED"
+  when: item.rc != 0
+  loop: "{{ ping_result.results }}"
+  loop_control:
+    label: "{{ item.item }}"
+
+- name: Traceroute report
+  debug:
+    msg: "{{ item.stdout.split('\n') }}"
+  when: item.rc == 0
+  loop: "{{ traceroute_result.results }}"
+  loop_control:
+    label: "{{ item.cmd }}"
