@@ -6,7 +6,7 @@
   register: ping_result
   ignore_errors: true
   changed_when: false
-  #no_log: true
+  no_log: true
   with_items:
     - "{{ hosts_to_ping }}"
 
@@ -15,7 +15,7 @@
   register: traceroute_result
   ignore_errors: true
   changed_when: false
-  #no_log: true
+  no_log: true
   with_items:
     - "{{ hosts_to_ping }}"
 
