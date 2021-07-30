@@ -1,0 +1,17 @@
+---
+- name: Generate Report
+  template:
+    src: templates/email_report.j2
+    dest: ./Connectivity_Report.txt
+  delegate_to: localhost
+
+- name: Email config file
+  mail:
+    from: "{{ from_address }}"
+    to: "{{ to_address }}"
+    subject: Connecitvity Test Report
+    subtype: html
+    host: "{{ smtp_server }}"
+    attach: ./Connectivity_Report.txt
+    body: |
+      Connectivity test report.

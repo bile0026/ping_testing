@@ -1,0 +1,23 @@
+PING SUCCESS:
+{% for result in ping_result.results %}
+  {% if result.rc == 0 %}
+    Ping succeeded for {{ result.item }}
+  {% endif %}
+{% endfor %}
+
+PING FAILURES:
+{% for result in ping_result.results %}
+  {% if result.rc != 0 %}
+    Ping failed for {{ result.item }}
+  {% endif %}
+{% endfor %}
+
+TRACE RESULTS:
+{% for result in traceroute_result.results %}
+    Trace for {{ result.item }}
+    {% for line in result.stdout_lines %}
+    {{ line }}
+    {% endfor %}
+
+
+{% endfor %}
