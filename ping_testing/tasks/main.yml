@@ -42,3 +42,9 @@
   loop: "{{ traceroute_result.results }}"
   loop_control:
     label: "{{ item.cmd }}"
+
+- name: Email Report
+  include_tasks: ./email_report.yml
+  when:
+    - email_report is defined
+    - email_report == true
