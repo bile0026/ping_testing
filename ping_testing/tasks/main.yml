@@ -46,4 +46,4 @@
 - name: Email Report
   include_tasks: ./email_report.yml
   when:
-    - email_report is true
+    - email_report == 'true'

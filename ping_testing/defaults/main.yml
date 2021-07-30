@@ -2,7 +2,7 @@
 # defaults file for ping_testing
 
 # for email reports
-email_report: false
+email_report: "false"
 smtp_server: mail.example.com
 to_address: johndoe@example.com
 from_address: awx@example.com
