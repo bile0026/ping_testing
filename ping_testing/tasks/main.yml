@@ -47,4 +47,4 @@
   include_tasks: ./email_report.yml
   when:
     - email_report is defined
-    - email_report
+    - email_report == true
