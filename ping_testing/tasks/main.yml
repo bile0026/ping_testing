@@ -10,8 +10,8 @@
   with_items:
     - "{{ hosts_to_ping }}"
 
-- name: Traceroute for reachability
-  command: tracepath -n {{ item }}
+- name: Trace for reachability
+  command: "{{ trace_type }} -n {{ item }}"
   register: traceroute_result
   ignore_errors: true
   changed_when: false
@@ -35,7 +35,7 @@
   loop_control:
     label: "{{ item.item }}"
 
-- name: Traceroute report
+- name: Trace report
   debug:
     msg: "{{ item.stdout.split('\n') }}"
   when: item.rc == 0

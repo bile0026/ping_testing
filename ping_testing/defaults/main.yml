@@ -1,5 +1,6 @@
 ---
 # defaults file for ping_testing
+trace_type: traceroute
 
 hosts_to_ping:
   - 192.168.0.1
