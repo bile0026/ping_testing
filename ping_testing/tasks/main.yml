@@ -50,6 +50,7 @@
   #delegate_to: localhost
   when:
     - generate_report == "true"
+  run_once: true
 
 - name: Email Report
   include_tasks: ./email_report.yml
