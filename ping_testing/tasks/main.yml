@@ -56,3 +56,8 @@
   include_tasks: ./email_report.yml
   when:
     - email_report == 'true'
+
+- name: Cleanup Report Files
+  file:
+    state: absent
+    path: ./Connectivity_Report.txt
