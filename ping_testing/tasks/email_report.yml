@@ -9,3 +9,4 @@
     attach: ./Connectivity_Report.txt
     body: |
       Connectivity test report.
+  run_once: true
