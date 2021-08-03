@@ -47,7 +47,7 @@
   template:
     src: templates/email_report.j2
     dest: ./Connectivity_Report.txt
-  #delegate_to: localhost
+  delegate_to: localhost
   when:
     - generate_report == "true"
   run_once: true

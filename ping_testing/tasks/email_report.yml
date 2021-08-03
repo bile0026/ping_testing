@@ -9,4 +9,5 @@
     attach: ./Connectivity_Report.txt
     body: |
       Connectivity test report.
+  delegate_to: localhost
   run_once: true
