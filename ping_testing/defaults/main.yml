@@ -1,6 +1,9 @@
 ---
 # defaults file for ping_testing
 
+# generate report?
+generate_report: "true"
+
 # for email reports
 email_report: "false"
 smtp_server: mail.example.com
@@ -10,5 +13,7 @@ from_address: awx@example.com
 trace_type: traceroute
 
 hosts_to_ping:
-  - 192.168.0.1
-  - 192.168.1.1
+  - ip: 192.168.0.1
+    name: Gateway
+  - ip: 192.168.1.1
+    name: First Hop

@@ -1,10 +1,13 @@
+RESULTS FOR localhost:
 PING SUCCESS:
-      Ping succeeded for 192.168.1.1
+      Ping succeeded for 192.168.1.1 -  First Hop
   
 PING FAILURES:
   
 TRACE RESULTS:
-    Trace for 192.168.1.1
-         1  192.168.1.1  2.390 ms  3.196 ms  2.123 ms
+    Trace for 192.168.1.1 - First Hop
+         1  192.168.1.1  2.177 ms  2.080 ms  2.183 ms
     
+
+
 

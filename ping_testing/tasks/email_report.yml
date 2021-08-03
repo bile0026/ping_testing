@@ -1,10 +1,4 @@
 ---
-- name: Generate Report
-  template:
-    src: templates/email_report.j2
-    dest: ./Connectivity_Report.txt
-  delegate_to: localhost
-
 - name: Email config file
   mail:
     from: "{{ from_address }}"

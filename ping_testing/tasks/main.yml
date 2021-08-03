@@ -2,7 +2,7 @@
 # tasks file for ping_testing
 
 - name: Ping for reachability
-  command: ping -c2 {{ item }}
+  command: ping -c2 {{ item.ip }}
   register: ping_result
   ignore_errors: true
   changed_when: false
@@ -11,7 +11,7 @@
     - "{{ hosts_to_ping }}"
 
 - name: Trace for reachability
-  command: "{{ trace_type }} -n {{ item }}"
+  command: "{{ trace_type }} -n {{ item.ip }}"
   register: traceroute_result
   ignore_errors: true
   changed_when: false
@@ -42,6 +42,14 @@
   loop: "{{ traceroute_result.results }}"
   loop_control:
     label: "{{ item.cmd }}"
+
+- name: Generate Report
+  template:
+    src: templates/email_report.j2
+    dest: ./Connectivity_Report.txt
+  #delegate_to: localhost
+  when:
+    - generate_report == "true"
 
 - name: Email Report
   include_tasks: ./email_report.yml
