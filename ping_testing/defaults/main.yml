@@ -10,6 +10,7 @@ smtp_server: mail.example.com
 to_address: johndoe@example.com
 from_address: awx@example.com
 email_subject: "Connectivity Report"
+report_name: "Connectivity_Report"
 
 trace_type: traceroute
 

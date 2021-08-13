@@ -46,7 +46,7 @@
 - name: Generate Report
   template:
     src: templates/email_report.j2
-    dest: ./Connectivity_Report.txt
+    dest: "./{{ report_name }}.txt"
   delegate_to: localhost
   when:
     - generate_report == "true"

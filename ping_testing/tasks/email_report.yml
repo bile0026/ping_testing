@@ -6,7 +6,7 @@
     subject: "{{ email_subject }}"
     subtype: html
     host: "{{ smtp_server }}"
-    attach: ./Connectivity_Report.txt
+    attach: "./{{ report_name }}.txt"
     body: |
       Connectivity test report.
   delegate_to: localhost
