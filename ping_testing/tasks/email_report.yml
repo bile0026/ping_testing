@@ -3,7 +3,7 @@
   mail:
     from: "{{ from_address }}"
     to: "{{ to_address }}"
-    subject: Connecitvity Test Report
+    subject: "{{ email_subject }}"
     subtype: html
     host: "{{ smtp_server }}"
     attach: ./Connectivity_Report.txt
